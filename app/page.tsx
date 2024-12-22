@@ -188,14 +188,34 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-4">
-        <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
-          <div className="w-4 h-4">
-            <img src={'star.svg'} className="dark:invert" />
+      <div className="flex gap-4">
+        <div className="flex flex-col gap-4 w-1/2">
+          <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
+            <div className="w-4 h-4">
+              <img src={'star.svg'} className="dark:invert" />
+            </div>
+            <span className="text-xs ">Github</span>
           </div>
-          <span className="text-xs ">Spotify</span>
+          <div className="flex flex-col gap-2">
+            <Image
+              src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=radical&locale=en&hide_border=true"
+              alt="GitHub Stats"
+              height={150}
+
+            />
+            <Image src="https://streak-stats.demolab.com?user=fphaikal&locale=en&mode=daily&theme=radical&hide_border=true&border_radius=5" height={150} alt="streak graph" />
+            <Image src="https://github-readme-stats.vercel.app/api/top-langs?username=fphaikal&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=10&theme=radical&hide_border=true" height={150} alt="languages graph" />
+          </div>
         </div>
-        <SpotifyStats />
+        <div className="flex flex-col gap-4 w-1/2">
+          <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
+            <div className="w-4 h-4">
+              <img src={'star.svg'} className="dark:invert" />
+            </div>
+            <span className="text-xs ">Spotify</span>
+          </div>
+          <SpotifyStats />
+        </div>
       </div>
     </section>
   );

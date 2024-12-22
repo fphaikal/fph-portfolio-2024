@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Card, CardBody, Image, Slider } from "@nextui-org/react";
+import { RiSpotifyFill } from 'react-icons/ri';
 
 interface Track {
   [x: string]: any;
@@ -88,21 +89,24 @@ export default function SpotifyStats() {
     >
       <CardBody>
         <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
-          <div className="relative col-span-6 md:col-span-4">
+          <div className="relative col-span-6 md:col-span-3">
             <Image
               alt="Album cover"
               className="object-cover"
-              height={200}
+              height={140}
               shadow="md"
               src={track?.albumImageUrl}
               width="100%"
             />
           </div>
 
-          <div className="flex flex-col col-span-6 md:col-span-8">
+          <div className="flex flex-col col-span-6 md:col-span-9">
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-0">
-                <h3 className="font-semibold text-foreground/90">{track?.is_playing ? 'Online' : 'Offline'}</h3>
+                <div className={`flex gap-2 items-center my-auto ${track?.is_playing ? "text-success" : "text-foreground/90"}`}>
+                  <RiSpotifyFill size={20} />
+                  <h3 className="font-semibold  ">{track?.is_playing ? 'Now Playing' : 'Last Played'}</h3>
+                </div>
                 <h1 className="text-large font-medium mt-2">{track?.name}</h1>
                 <h1 className="text-small font-light">{track?.artists}| {track?.album} </h1>
               </div>
