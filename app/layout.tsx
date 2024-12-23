@@ -7,8 +7,6 @@ import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { ibrand } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import { NameCard } from "@/components/name-card";
 import { Sidebar } from "@/components/sidebar";
 
 export const metadata: Metadata = {

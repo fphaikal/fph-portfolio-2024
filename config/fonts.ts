@@ -12,7 +12,7 @@ export const fontMono = FontMono({
 });
 
 export const ibrand = localFont({
-  src: "../styles/fonts/woff/ibrand.woff",
+  src: "../styles/fonts/woff/Ibrand.woff",
   variable: "--font-ibrand",
   weight: "100 900",
 });
