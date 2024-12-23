@@ -12,7 +12,7 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Image } from "@nextui-org/react";
 import RunningScroll from "@/components/RunningScroll";
-import SpotifyStats from "@/components/spotify-status";
+import SpotifyStats from "@/components/spotify/now-playing";
 
 const skill = [
   {
@@ -116,7 +116,7 @@ const project = [
 export default function Home() {
   return (
     <section className="flex flex-col gap-8 py-8 md:py-10 min-h-screen">
-      <div className="flex gap-4 mb-10">
+      <div className="flex flex-col xl:flex-row gap-4 mb-10">
         <motion.div className="flex flex-col gap-4 h-[300px] justify-center w-2/3"
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -199,7 +199,7 @@ export default function Home() {
           <div className="flex flex-col">
             <Link isExternal href="https://github.com/fphaikal">
               <Card className="flex flex-row items-center">
-                <Image
+                <Image  
                   src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&title_color=17C964&text_color=74DFA2&locale=en&hide_border=true"
                   alt="GitHub Stats"
 

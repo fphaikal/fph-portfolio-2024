@@ -42,10 +42,10 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative h-screen flex">
-            <div className="flex w-full">
-              <Sidebar />
-              <main className="flex-1 container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+          <div className="flex w-full h-screen overflow-hidden">
+            <Sidebar />
+            <main className="flex-1 overflow-y-auto">
+              <div className="container mx-auto max-w-7xl pt-16 px-6">
                 {children}
                 <footer className="w-full flex items-center justify-center py-3">
                   <Link
@@ -58,8 +58,8 @@ export default function RootLayout({
                     <p className="text-primary">FPHaikal</p>
                   </Link>
                 </footer>
-              </main>
-            </div>
+              </div>
+            </main>
           </div>
         </Providers>
       </body>
