@@ -13,7 +13,7 @@ import { ThemeSwitch } from "@/components/theme-switch";
 export const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="sticky top-0 flex flex-col gap-4 justify-between h-screen p-5">
+    <aside className="fixed top-0 flex flex-col gap-4 justify-between h-screen p-5">
       <div className="flex flex-col gap-4 items-center justify-between h-full">
         <div className="flex flex-col gap-4 items-center">
           <Tooltip content="FPH" placement="right">

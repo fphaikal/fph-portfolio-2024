@@ -196,15 +196,20 @@ export default function Home() {
             </div>
             <span className="text-xs ">Github</span>
           </div>
-          <div className="flex flex-col gap-2">
-            <Image
-              src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=radical&locale=en&hide_border=true"
-              alt="GitHub Stats"
-              height={150}
+          <div className="flex flex-col">
+            <Link isExternal href="https://github.com/fphaikal">
+              <Card className="flex flex-row items-center">
+                <Image
+                  src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&title_color=17C964&text_color=74DFA2&locale=en&hide_border=true"
+                  alt="GitHub Stats"
 
-            />
-            <Image src="https://streak-stats.demolab.com?user=fphaikal&locale=en&mode=daily&theme=radical&hide_border=true&border_radius=5" height={150} alt="streak graph" />
-            <Image src="https://github-readme-stats.vercel.app/api/top-langs?username=fphaikal&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=10&theme=radical&hide_border=true" height={150} alt="languages graph" />
+                />
+                <Image src="https://github-readme-stats.vercel.app/api/top-langs?username=fphaikal&locale=en&hide_title=false&layout=compact&langs_count=10&theme=transparent&title_color=17C964&text_color=74DFA2&hide_border=true" height={150} alt="languages graph" />
+              </Card>
+            </Link>
+            {/* <Card>
+              <Image src="https://statsme.vercel.app/api/wakatime?username=fphaikal&hide_border=true&theme=transparent&icon_color=ffb886&title_color=ffb886&text_color=fcfeff&range=last_7_day&langs_count=4" height={150} alt="streak graph" />
+            </Card> */}
           </div>
         </div>
         <div className="flex flex-col gap-4 w-1/2">
