@@ -18,3 +18,41 @@
     transparent
   );
 }
+
+.embla {
+  overflow: hidden;
+  --slide-spacing: 1rem;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide__icon {
+  flex: 0 0 10%;
+  min-width: 0;
+}
+.embla__slide {
+  flex: 0 0 50%;
+  min-width: 0;
+}
+
+.embla__project {
+  max-width: 48rem;
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 70%;
+}
+.embla__viewport__project {
+  overflow: hidden;
+}
+.embla__container__project {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide__project {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}

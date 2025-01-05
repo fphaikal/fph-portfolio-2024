@@ -25,7 +25,7 @@ export default function SpotifyNowPlaying() {
   // Fungsi untuk mengambil data dari API
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://spotify-api-steel-three.vercel.app/api/spotify/now-playing`);
+      const response = await fetch(`https://api.fph.my.id/api/spotify/now-playing`);
       if (!response.ok) {
         throw new Error('Failed to fetch');
       }
@@ -109,7 +109,7 @@ export default function SpotifyNowPlaying() {
               </div>
             </div>
 
-              <Skeleton className="h-4 w-full rounded-lg" />
+            <Skeleton className="h-4 w-full rounded-lg" />
             <div className="flex flex-col mt-3 gap-1">
               <Skeleton className="h-4 w-full rounded-lg" />
             </div>
@@ -117,8 +117,48 @@ export default function SpotifyNowPlaying() {
         </div>
       </CardBody>
     </Card>
-  );  
-  if (error) return <p>Failed to load track</p>;
+  );
+  
+  if (error) return (
+    <Card
+      isBlurred
+      className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px]"
+      shadow="sm"
+    >
+      <CardBody>
+        <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center w-full">
+          <div className="relative col-span-6 md:col-span-3 w-full">
+            <Image
+              alt="Album cover"
+              className="object-cover"
+              height={140}
+              shadow="md"
+              src={track?.albumImageUrl}
+              width="100%"
+            />
+          </div>
+
+          <div className="flex flex-col col-span-6 md:col-span-9 w-full justify-between h-full">
+            <div className="flex justify-between items-start w-full">
+              <div className="flex flex-col gap-2 w-full">
+                <div className={`flex gap-2 items-center my-auto`}>
+                  <RiSpotifyFill size={20} />
+                  <Skeleton className="h-3 w-1/3 rounded-lg" />
+                </div>
+                <Skeleton className="h-4 w-full rounded-lg" />
+                <Skeleton className="h-4 w-full rounded-lg" />
+              </div>
+            </div>
+
+            <Skeleton className="h-4 w-full rounded-lg" />
+            <div className="flex flex-col mt-3 gap-1">
+              <Skeleton className="h-4 w-full rounded-lg" />
+            </div>
+          </div>
+        </div>
+      </CardBody>
+    </Card>
+  );
 
   return (
     <Card

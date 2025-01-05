@@ -3,16 +3,15 @@
 import { motion } from "framer-motion";
 
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
 
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
-import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Image } from "@nextui-org/react";
+import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Image, Tooltip } from "@nextui-org/react";
 import RunningScroll from "@/components/RunningScroll";
 import SpotifyStats from "@/components/spotify/now-playing";
+import Portfolio from "@/components/portfolio";
+
 
 const skill = [
   {
@@ -95,29 +94,42 @@ const project = [
     thumb: "QC",
     description: "A web app for quality control report",
     client: "PT Denapella Lestari",
-    tech: ["mongodb", "nextjs", "nodejs", "express"]
+    tech: ["mongodb", "nextjs", "nodejs", "express"],
+    url: ""
   },
   {
     name: "Gerbang Akses Pintar dan Kehadiran",
     thumb: "GASKAN",
     description: "A smart access gate and attendance system",
     client: "SMK SMTI Yogyakarta",
-    tech: ["nuxt", "nodejs", "express"]
+    tech: ["nuxt", "nodejs", "express"],
+    url: ""
   },
   {
     name: "Chemicfest #8 Web App",
     thumb: "CF#8",
     description: "A web app for Chemicfest #8",
     client: "OSIS SMK SMTI Yogyakarta",
-    tech: ["nuxt", "nodejs", "express"]
+    tech: ["nuxt", "nodejs", "express"],
+    url: ""
+  },
+  {
+    name: "TokDL",
+    thumb: "TokDL",
+    description: "A web app for downloading TikTok videos",
+    client: "Personal Project",
+    tech: ["nextjs", "nodejs"],
+    url: "https://tokdl.fph.my.id"
   }
 ]
 
 export default function Home() {
+  
+
   return (
-    <section className="flex flex-col gap-8 py-8 md:py-10 min-h-screen">
-      <div className="flex flex-col xl:flex-row gap-4 mb-10">
-        <motion.div className="flex flex-col gap-4 h-[300px] justify-center w-2/3"
+    <section className="flex flex-col gap-8 py-20 md:py-10 min-h-screen">
+      <div className="flex flex-col xl:flex-row gap-4 xl:mb-10">
+        <motion.div className="flex flex-col gap-4 h-[300px] justify-center w-full xl:w-2/3"
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -150,46 +162,15 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
-        <div className="flex justify-center items-center w-1/3">
-          <Image src={'fph-logo.svg'} alt="Nextjs Logo" className="invert dark:invert-0" width={300} height={300} />
+        <div className="hidden xl:flex justify-center items-center w-full xl:w-2/3">
+          <Image src={'fph-logo.svg'} alt="FPH Logo" className="invert dark:invert-0" width={300} height={300} />
         </div>
       </div>
       <RunningScroll items={skill} />
-      <div className="flex flex-col gap-4">
-        <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
-          <div className="w-4 h-4">
-            <img src={'star.svg'} className="dark:invert" />
-          </div>
-          <span className="text-xs ">Portfolio</span>
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          {project.map((item, index) => (
-            <Card key={index} className="max-w-[400px]">
-              <CardHeader className="flex gap-3">
-                <Avatar name={item.thumb} radius="lg" color="success" />
-                <div className="flex flex-col">
-                  <p className="text-md">{item.name}</p>
-                </div>
-              </CardHeader>
-              <Divider />
-              <CardFooter className="flex justify-between">
-                <div className="flex gap-2">
-                  <Chip color="default" size="sm">Client</Chip>
-                  {item.client}
-                </div>
-                <div className="flex gap-2">
-                  {item.tech.map((tech, index) => (
-                    <Image key={index} src={`${tech}.svg`} alt={`${tech} Logo`} width={20} height={20} className={`${tech === "express" || tech === "nextjs" ? "dark:invert invert-0" : ""} ${tech[0]}`}
-                    />
-                  ))}
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </div>
-      <div className="flex gap-4">
-        <div className="flex flex-col gap-4 w-1/2">
+      
+      
+      <div className="flex flex-col xl:flex-row gap-4">
+        <div className="flex flex-col gap-4 w-full xl:w-1/2">
           <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
             <div className="w-4 h-4">
               <img src={'star.svg'} className="dark:invert" />
@@ -199,7 +180,7 @@ export default function Home() {
           <div className="flex flex-col">
             <Link isExternal href="https://github.com/fphaikal">
               <Card className="flex flex-row items-center">
-                <Image  
+                <Image
                   src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&title_color=17C964&text_color=74DFA2&locale=en&hide_border=true"
                   alt="GitHub Stats"
 
@@ -212,7 +193,7 @@ export default function Home() {
             </Card> */}
           </div>
         </div>
-        <div className="flex flex-col gap-4 w-1/2">
+        <div className="flex flex-col gap-4 w-full xl:w-1/2">
           <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
             <div className="w-4 h-4">
               <img src={'star.svg'} className="dark:invert" />
@@ -222,6 +203,7 @@ export default function Home() {
           <SpotifyStats />
         </div>
       </div>
+      <Portfolio project={project} />
     </section>
   );
 }
