@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Card,
   CardFooter,
@@ -9,6 +11,7 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  Divider,
 } from "@nextui-org/react";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { useState } from "react";
@@ -70,22 +73,20 @@ export default function Certificate({ certificate }: { certificate: Certificate[
                 Certificate Details
               </ModalHeader>
               <ModalBody>
-                <p>
-                  <strong>Company:</strong> {selectedCertificate?.company || "N/A"}
-                </p>
-                <p>
-                  <strong>Year:</strong> {selectedCertificate?.year || "N/A"}
-                </p>
-                <p>
-                  This certificate verifies the completion of the program "{selectedCertificate?.name}" conducted by{" "}
-                  {selectedCertificate?.company}.
-                </p>
                 <Image
                   removeWrapper
                   alt={`${selectedCertificate?.name} image`}
                   className="rounded-md mt-4"
                   src={selectedCertificate?.image || "placeholder.png"}
                 />
+                <p>
+                  This certificate verifies the completion of the program "{selectedCertificate?.name}" conducted by{" "}
+                  {selectedCertificate?.company}.
+                </p>
+                <Divider />
+                <p className="font-thin">
+                  {selectedCertificate?.company || "N/A"} - {selectedCertificate?.year || "N/A"}
+                </p>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

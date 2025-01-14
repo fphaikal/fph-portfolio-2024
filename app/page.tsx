@@ -1,18 +1,15 @@
-'use client';
-
-import { motion } from "framer-motion";
-
-import { Link } from "@nextui-org/link";
+import dynamic from "next/dynamic";
 import { button as buttonStyles } from "@nextui-org/theme";
-
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Image, Tooltip } from "@nextui-org/react";
-import RunningScroll from "@/components/RunningScroll";
-import SpotifyStats from "@/components/spotify/now-playing";
-import Portfolio from "@/components/portfolio";
-import Certificate from "@/components/certificate";
 
+const Certificate = dynamic(() => import("@/components/certificate"), {ssr: false});
+const Portfolio = dynamic(() => import("@/components/portfolio"), {ssr: false});
+const SpotifyStats = dynamic(() => import("@/components/spotify/now-playing"), {ssr: false});
+const RunningScroll = dynamic(() => import("@/components/RunningScroll"), {ssr: false});
+const GithubStats = dynamic(() => import("@/components/github/index"), {ssr: false});
+const Hero = dynamic(() => import("@/components/hero"), {ssr: false});
 
 const skill = [
   {
@@ -139,75 +136,12 @@ const certificates = [
   },
 ];
 export default function Home() {
-
-
   return (
     <section className="flex flex-col gap-8 py-20 md:py-10 min-h-screen">
-      <div className="flex flex-col xl:flex-row gap-4 xl:mb-10">
-        <motion.div className="flex flex-col gap-4 h-[300px] justify-center w-full xl:w-2/3"
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}>
-          <div className="inline-block max-w-xl">
-            <span className={title()}>Hi👋 I'm&nbsp;</span>
-            <span className={`${title({ color: "violet" })} `}>FPHaikal</span>
-            <br />
-            <span className={title()}>
-              Fullstack Developer &amp; Mechatronics Engineering Student
-            </span>
-            <br />
-            <span className={subtitle()}>
-              I'm a vocational high school student interning in mechatronics, with expertise in full-stack development.
-              Passionate about programming.
-            </span>
-          </div>
-
-          <div className="flex gap-3">
-            <Link
-              isExternal
-              className={buttonStyles({ variant: "bordered", radius: "full" })}
-              href=""
-            >
-              <GithubIcon size={20} />
-              GitHub
-            </Link>
-          </div>
-        </motion.div>
-        <div className="hidden xl:flex justify-center items-center w-full xl:w-2/3">
-          <Image src={'fph-logo.svg'} alt="FPH Logo" className="invert dark:invert-0" width={300} height={300} />
-        </div>
-      </div>
-      <RunningScroll items={skill} />
-
-
+      <Hero/>
+      <RunningScroll items={skill} /> 
       <div className="flex flex-col xl:flex-row gap-4">
-        <div className="flex flex-col gap-4 w-full xl:w-1/2">
-          <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
-            <div className="w-4 h-4">
-              <img src={'star.svg'} className="dark:invert" />
-            </div>
-            <span className="text-xs ">Github</span>
-          </div>
-          <div className="flex flex-col">
-            <Link isExternal href="https://github.com/fphaikal">
-              <Card className="flex flex-row items-center">
-                <Image
-                  src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&title_color=17C964&text_color=74DFA2&locale=en&hide_border=true"
-                  alt="GitHub Stats"
-
-                />
-                <Image src="https://github-readme-stats.vercel.app/api/top-langs?username=fphaikal&locale=en&hide_title=false&layout=compact&langs_count=10&theme=transparent&title_color=17C964&text_color=74DFA2&hide_border=true" height={150} alt="languages graph" />
-              </Card>
-            </Link>
-            {/* <Card>
-              <Image src="https://statsme.vercel.app/api/wakatime?username=fphaikal&hide_border=true&theme=transparent&icon_color=ffb886&title_color=ffb886&text_color=fcfeff&range=last_7_day&langs_count=4" height={150} alt="streak graph" />
-            </Card> */}
-          </div>
-        </div>
+        <GithubStats />
         <div className="flex flex-col gap-4 w-full xl:w-1/2">
           <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
             <div className="w-4 h-4">

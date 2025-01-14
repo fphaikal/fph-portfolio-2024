@@ -1,3 +1,5 @@
+'use client';
+
 import { Avatar, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Link, Image, Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { TbExternalLink } from "react-icons/tb";
