@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  other: {
-    'google-site-verification': 'IZG0T7Kur6rnPfSLhdjXz-sYLqiE_tAK_jJ51-58VUE',
-  },
+  verification: {
+    google: "IZG0T7Kur6rnPfSLhdjXz-sYLqiE_tAK_jJ51-58VUE",
+  }
 };
 
 export const viewport: Viewport = {
