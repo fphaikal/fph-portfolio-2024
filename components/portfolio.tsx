@@ -9,7 +9,7 @@ interface Project {
   thumb: string
   tech: string[]
   url: string,
-  description: string[]
+  description: string
 }
 
 export default function Portfolio({ project }: { project: Project[] }) {
