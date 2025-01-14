@@ -26,7 +26,7 @@ export default function Portfolio({ project }: { project: Project[] }) {
     <div className="flex flex-col gap-4">
       <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
         <div className="w-4 h-4">
-          <img src={'star.svg'} className="dark:invert" />
+          <img src={'star.svg'} className="dark:invert" alt="Star Icon"/>
         </div>
         <span className="text-xs ">Portfolio</span>
       </div>
