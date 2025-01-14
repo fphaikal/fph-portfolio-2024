@@ -38,7 +38,7 @@ export default function Certificate({ certificate }: { certificate: Certificate[
         className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}
       >
         <div className="w-4 h-4">
-          <img src="star.svg" className="dark:invert" />
+          <img src="star.svg" className="dark:invert" alt="Star Icon" />
         </div>
         <span className="text-xs">Certificate</span>
       </div>
