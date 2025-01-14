@@ -4,12 +4,12 @@ import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, Image, Tooltip } from "@nextui-org/react";
 
-const Certificate = dynamic(() => import("@/components/certificate"), {ssr: false});
-const Portfolio = dynamic(() => import("@/components/portfolio"), {ssr: false});
+const Certificate = dynamic(() => import("@/components/home/certificate"), {ssr: false});
+const Portfolio = dynamic(() => import("@/components/home/portfolio"), {ssr: false});
+const RunningScroll = dynamic(() => import("@/components/home/RunningScroll"), {ssr: false});
+const Hero = dynamic(() => import("@/components/home/hero"), {ssr: false});
 const SpotifyStats = dynamic(() => import("@/components/spotify/now-playing"), {ssr: false});
-const RunningScroll = dynamic(() => import("@/components/RunningScroll"), {ssr: false});
 const GithubStats = dynamic(() => import("@/components/github/index"), {ssr: false});
-const Hero = dynamic(() => import("@/components/hero"), {ssr: false});
 
 const skill = [
   {
@@ -98,7 +98,7 @@ const project = [
   {
     name: "Gerbang Akses Pintar dan Kehadiran",
     thumb: "GASKAN",
-    description: "A smart access gate and attendance system",
+    description: "The Gerbang Akses Pintar dan Kehadiran (GASKAN) is a web-based application designed for student attendance management at SMK SMTI Yogyakarta. This system simplifies and automates the attendance process, providing an efficient and reliable solution for tracking and managing student presence.",
     client: "SMK SMTI Yogyakarta",
     tech: ["nuxt", "nodejs", "express"],
     url: ""
@@ -106,7 +106,7 @@ const project = [
   {
     name: "Chemicfest #8 Web App",
     thumb: "CF#8",
-    description: "A web app for Chemicfest #8",
+    description: "The Chemicfest#8 website is an online platform designed for the annual Chemicalistronic Festival (CHEMICFEST) #8, which serves as entertainment for the students of SMK-SMTI Yogyakarta. This festival is a showcase of talents from the students, especially those involved in extracurricular activities. The website facilitates ticket purchases, check-in for entering the venue, and live streaming of the event, providing an all-in-one solution for attendees to engage with the festival.",
     client: "OSIS SMK SMTI Yogyakarta",
     tech: ["nuxt", "nodejs", "express"],
     url: ""
@@ -114,7 +114,7 @@ const project = [
   {
     name: "TokDL",
     thumb: "TokDL",
-    description: "A web app for downloading TikTok videos",
+    description: "The TokDL website is an online tool designed to download TikTok videos easily. It provides users with a simple and efficient way to save videos for offline viewing without watermarks.",
     client: "Personal Project",
     tech: ["nextjs", "nodejs"],
     url: "https://tokdl.fph.my.id"

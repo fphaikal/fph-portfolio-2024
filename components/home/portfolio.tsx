@@ -69,9 +69,6 @@ export default function Portfolio({ project }: { project: Project[] }) {
                 <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
               </ModalFooter>
             </>
           )}
