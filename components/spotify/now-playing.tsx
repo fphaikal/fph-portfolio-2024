@@ -64,6 +64,7 @@ export default function SpotifyNowPlaying() {
 
       return () => clearInterval(interval); // Bersihkan interval saat komponen unmount
     }
+    setLoading(false);
   }, [track]);
 
   const formatTime = (milliseconds: number): string => {

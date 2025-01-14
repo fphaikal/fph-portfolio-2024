@@ -9,7 +9,7 @@ import {
 import { AiFillSpotify, AiOutlineSpotify } from "react-icons/ai";
 
 export const siteConfig = {
-  name: "FPHaikal",
+  name: "Fahreza Pasha Haikal",
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
     {

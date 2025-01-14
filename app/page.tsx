@@ -11,6 +11,7 @@ import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Chip, Divider, 
 import RunningScroll from "@/components/RunningScroll";
 import SpotifyStats from "@/components/spotify/now-playing";
 import Portfolio from "@/components/portfolio";
+import Certificate from "@/components/certificate";
 
 
 const skill = [
@@ -92,7 +93,7 @@ const project = [
   {
     name: "QC Report Web App",
     thumb: "QC",
-    description: "A web app for quality control report",
+    description: "The Quality Pintar website is a web application designed to monitor and manage quality-related data in a factory, with a focus on four main sections:\n\n1. Final Inspection: The final check of products before being shipped to customers, ensuring they meet quality standards.\n2. NCR (Non-Conformance Report): A reporting system to document issues found during inspections and the corrective actions taken.\n3. IPR (Initial Production Run): The initial production phase that verifies product quality at the early stage before mass production.\n4. NG Data (Non-Good Data): Data related to products that fail to meet quality standards, including details about the failure causes and required fixes.\n\nThe website also uses an API to fetch and manage data, with a role-based system restricting access depending on the user type. Admin roles have access to all sections, while user roles can only view data.",
     client: "PT Denapella Lestari",
     tech: ["mongodb", "nextjs", "nodejs", "express"],
     url: ""
@@ -123,8 +124,22 @@ const project = [
   }
 ]
 
+const certificates = [
+  {
+    name: "Siemens Mechatronics System Certification Program",
+    company: "SIEMENS",
+    year: "2024",
+    image: "/smscp.png",
+  },
+  {
+    name: "Learn the Basics of Web Programming",
+    company: "Dicoding",
+    year: "2025",
+    image: "/web-developer.png",
+  },
+];
 export default function Home() {
-  
+
 
   return (
     <section className="flex flex-col gap-8 py-20 md:py-10 min-h-screen">
@@ -167,8 +182,8 @@ export default function Home() {
         </div>
       </div>
       <RunningScroll items={skill} />
-      
-      
+
+
       <div className="flex flex-col xl:flex-row gap-4">
         <div className="flex flex-col gap-4 w-full xl:w-1/2">
           <div className={`${buttonStyles({ variant: "bordered", radius: "full" })} w-fit flex items-center justify-center`}>
@@ -204,6 +219,7 @@ export default function Home() {
         </div>
       </div>
       <Portfolio project={project} />
+      <Certificate certificate={certificates} />
     </section>
   );
 }
