@@ -76,7 +76,7 @@ export default function Certificate({ certificate }: { certificate: Certificate[
                 <Image
                   removeWrapper
                   alt={`${selectedCertificate?.name} image`}
-                  className="rounded-md mt-4"
+                  className="rounded-md "
                   src={selectedCertificate?.image || "placeholder.png"}
                 />
                 <p>

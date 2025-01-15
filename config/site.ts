@@ -10,7 +10,7 @@ import { AiFillSpotify, AiOutlineSpotify } from "react-icons/ai";
 
 export const siteConfig = {
   name: "Fahreza Pasha Haikal",
-  description: "Make beautiful websites regardless of your design experience.",
+  description: "I'm a vocational high school student interning in mechatronics, with expertise in full-stack development. Passionate about programming.",
   navItems: [
     {
       label: "Home",
