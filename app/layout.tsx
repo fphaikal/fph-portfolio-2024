@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
-import Head from "next/head";
 
 import { Providers } from "./providers";
 
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "IZG0T7Kur6rnPfSLhdjXz-sYLqiE_tAK_jJ51-58VUE",
-  }
+  },
+
 };
 
 export const viewport: Viewport = {
@@ -38,9 +38,6 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <Head>
-        <meta name="google-adsense-account" content="ca-pub-5378094744483048" />
-      </Head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
