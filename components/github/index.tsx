@@ -14,9 +14,9 @@ export default function GithubStats() {
         </div>
         <span className="text-xs">Github</span>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <Link isExternal href="https://github.com/fphaikal">
-          <Card className="flex flex-row items-center">
+          <Card className="flex flex-row items-center w-full">
             <Image
               src="https://github-readme-stats.vercel.app/api?username=fphaikal&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&title_color=17C964&text_color=74DFA2&locale=en&hide_border=true"
               alt="GitHub Stats"
